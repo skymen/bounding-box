@@ -3,7 +3,7 @@ module.exports = {
   addonType: "behavior",
   id: "skymen_bounding_box",
   name: "bounding_box",
-  version: "1.0.0.0",
+  version: "1.0.0.1",
   category:
     // "attributes",
     // "movements",
@@ -227,7 +227,7 @@ module.exports = {
     AddObjectToCustomList: {
       category: "general",
       forward: "_AddObjectToCustomList",
-      autoScriptInterface: true,
+      autoScriptInterface: false,
       highlight: false,
       params: [
         {
@@ -254,7 +254,7 @@ module.exports = {
     RemoveFromList: {
       category: "general",
       forward: "_RemoveFromList",
-      autoScriptInterface: true,
+      autoScriptInterface: false,
       highlight: false,
       params: [
         {
@@ -281,7 +281,7 @@ module.exports = {
     AddLayerToCustomList: {
       category: "general",
       forward: "_AddLayerToCustomList",
-      autoScriptInterface: true,
+      autoScriptInterface: false,
       highlight: false,
       params: [
         {
@@ -315,7 +315,7 @@ module.exports = {
     RemoveLayerFromList: {
       category: "general",
       forward: "_RemoveLayerFromList",
-      autoScriptInterface: true,
+      autoScriptInterface: false,
       highlight: false,
       params: [
         {
@@ -332,7 +332,7 @@ module.exports = {
     SetBoundingBoxMode: {
       category: "general",
       forward: "_SetBoundingBoxMode",
-      autoScriptInterface: true,
+      autoScriptInterface: false,
       highlight: false,
       params: [
         {

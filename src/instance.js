@@ -213,17 +213,24 @@ function getInstanceJs(parentClass, scriptInterface, addonTriggers, C3) {
       if (this.enabled) this._StartTicking();
       else this._StopTicking();
     }
+    _DoAddInstancesToCustomList(instances, mode) {
+      instances.forEach((inst) => {
+        this.customList.push({ isLayer: false, inst, mode });
+      });
+    }
     _AddObjectToCustomList(object, mode) {
-      object
-        .GetCurrentSol()
-        .GetInstances()
-        .forEach((inst) => {
-          this.customList.push({ isLayer: false, inst, mode });
-        });
+      this._DoAddInstancesToCustomList(
+        object.GetCurrentSol().GetInstances(),
+        mode
+      );
+    }
+    _DoRemoveInstancesFromCustomList(insts) {
+      this.customList = this.customList.filter((x) => !insts.includes(x.inst));
     }
     _RemoveFromList(object) {
-      let insts = object.GetCurrentSol().GetInstances();
-      this.customList = this.customList.filter((x) => !insts.includes(x.inst));
+      this._DoRemoveInstancesFromCustomList(
+        object.GetCurrentSol().GetInstances()
+      );
     }
     _ClearList() {
       this.customList = [];
